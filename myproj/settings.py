@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '.vercel.app', 
+    'localhost',
+    '127.0.0.1',
 ]
 
 
@@ -75,16 +77,25 @@ WSGI_APPLICATION = 'myproj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
+
+import os
+
+# Get secret key from environment variable
+SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')  # Default key for local dev
+
+# Database configuration using environment variables
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'signal',  # Your database name
-        'USER': 'root',  # Your MySQL username
-        'PASSWORD': 'rahul123@A',  # Your MySQL password
-        'HOST': 'localhost',  # Or your database host (e.g., 'localhost' for local development)
-        'PORT': '3306',  # Default MySQL port, if different adjust accordingly
+        'NAME': os.getenv('DATABASE_NAME', 'signal'),  # Default to 'signal' if not set
+        'USER': os.getenv('DATABASE_USER', 'root'),
+        'PASSWORD': os.getenv('DATABASE_PASSWORD', 'default-password'),
+        'HOST': os.getenv('DATABASE_HOST', 'localhost'),
+        'PORT': os.getenv('DATABASE_PORT', '3306'),
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
