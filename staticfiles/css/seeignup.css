@@ -1,0 +1,106 @@
+/* Reset & Body Styling */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #f3f7f9;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(135deg, #72c2f7, #7d4fd1);
+}
+
+/* Signup Container */
+.signup-container {
+  background: white;
+  color: #333;
+  border-radius: 12px;
+  padding: 25px 35px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  text-align: center;
+}
+
+/* Logo Styling */
+.logo h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #6a4caf;
+}
+
+/* Form Header */
+.signup-form h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #6a4caf;
+}
+
+.signup-form p {
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+/* Input Fields */
+.input-group {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 2px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #444;
+  background-color: #fafafa;
+  transition: all 0.3s ease-in-out;
+}
+
+.input-group input:focus {
+  border-color: #6a4caf;
+  outline: none;
+}
+
+/* Sign Up Button */
+.signup-btn {
+  width: 100%;
+  padding: 2px;
+  background-color: #6a4caf;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.signup-btn:hover {
+  background-color: #7d4fd1;
+}
+
+/* Options & Links */
+.options {
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
+.options a {
+  color: #6a4caf;
+  text-decoration: none;
+}
+
+.options a:hover {
+  text-decoration: underline;
+}

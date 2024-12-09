@@ -1,0 +1,206 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.header nav{
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding-left: 20px;
+    display: flex;
+}
+
+.header nav h5{
+    margin-left: 600px;
+}
+
+body{
+    background-color: #06052f;
+    color: #fff;
+}
+
+.alldetailes #ol{
+    display: flex;
+    margin-left: 300px;
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+#ol a{
+    text-decoration: none;
+    color: white;
+}
+
+#ol a:hover{
+    color: grey;
+}
+
+#ol li{
+    margin-left: 20px;
+}
+
+.dashboard{
+    margin-top: 50px;
+    background-color: #121258;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding-left: 20px;
+    color: #fff;
+    height: 100px;
+    padding-top: 28px;
+}
+
+.amount{
+    display: flex;
+    padding-top: 20px;
+    background-color: #440379;
+    height: 100px;
+    margin-inline: 50px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+.amount #balance{
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding-left: 20px;
+    color: #fff;
+}
+
+.amount #balance1{
+    margin-left: 700px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+#btn1{
+    width: 130px;
+    display: inline-block;
+    height: 30px;
+    background-color: #4caf50;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#btn1:hover{
+    background-color: darkgreen;
+}
+
+.new{
+    background-color:#181860 ;
+    height: 70px;
+    margin-inline: 110px;
+    border-radius: 10px;
+}
+
+#navs{
+    display: flex;
+}
+
+#navs p{
+    padding-left: 40px;
+    font-weight: 200;
+    margin-top: 23px;
+}
+
+
+.main{
+    background-color:#36267f;
+    height: 140px;
+    display: flex;
+    margin-top: 10px;
+}
+
+.main .lock-logo{
+    width: 70px;
+    height: 70px;
+    padding-top: 10px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.main2 #btn2{
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    margin-top: 38px;
+    margin-left: 120px;
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btn2:hover{
+    background-color:darkgreen;
+}
+
+.main3 #key{
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-left: 120px;
+    margin-top: 50px;
+    color: #fff;
+}
+
+.main4 #btn3{
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    margin-top: 38px;
+    margin-left: 120px;
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btn3:hover{
+    background-color:darkgreen;
+}
+
+.main5 p{
+    color: #fff;
+    font-weight: 500;
+    margin-left: 120px;
+    margin-top: 17px;
+    color: #fff;
+}
+
+
+
+.main6 .up-down-logo{
+    width: 50px;
+    height: 50px;
+    margin-top: 40px;
+    margin-left: 120px;
+    border-radius: 50px;
+}
+
+.vada #btn10{
+    margin-left: 620px;
+    margin-top: 30px;
+    display: inline-block;
+    width: 130px;
+    height: 60px;
+    color: #fff;
+    background-color: darkolivegreen;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: 4px solid darkgreen;
+    cursor: pointer;
+}
+
+#btn10:hover{
+    background-color: green;
+}
+
+
+
