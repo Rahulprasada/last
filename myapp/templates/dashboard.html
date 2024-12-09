@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <h1>📈 Mint Street</h1>
+        </nav>
+    </header>
+
+    <div class='alldetailes'>
+        <ol id="ol">
+            <a href='#'><li>Signal Dashboard</li></a>
+            <a href='/signalview'><li>Signal performance</li></a>
+            <a href='/stockview'><li>Stock screener</li></a>
+            <a href='#'><li>My Account</li></a>
+            <a href='#'><li>Edit Profile</li></a>
+            <a href='#'><li>Subscribe</li></a>
+            <a href='#'><li>Knowladge Base</li></a>
+        </ol>
+    </div>
+
+    <div class='dashboard'>
+        <h2>Dashboard</h2>
+    </div>
+    <div class='amount'>
+        <div id='balance'>
+            <p id="p1">Swing Signals balance: 0</p><span><button id='btn1'>Buy Credits</button></span>
+        </div>
+        <div id="balance1">
+            <p id="p1">My Unlocked Signals Closed Signals</p><span>
+        </div>
+    </div>
+
+    <div class="new">
+        <nav id="navs">
+            <p>|ALL|</p>
+            <p>|This Week|</p>
+            <p>|Last Week|</p>
+            <p>|Older|</p>
+            <p>|Free Signal|</p>
+        </nav>
+    </div>
+
+    <div class='main'>
+        <div class='main1'>
+        {% load static %}
+        <img class="lock-logo" src="{% static 'images/lock-png.png' %}" alt="Meta Logo">
+        </div>
+        
+        <div class='main2'>
+            <button id='btn2'>Unlock to view Signal</button>
+        </div>
+        
+        <div class='main3'>
+            <p id='key'>Risk : Medium</p>
+        </div>
+
+        <div class='main4'>
+             <button id='btn3'>Gain : 3.00%</button>
+        </div>
+
+        <div class='main5'>
+            <p>Finance</p>
+            <p>Investment</p>
+            <p>Bankeres/Brokers/Service</p>
+        </div>
+
+        <div class='main6'>
+            {% load static %}
+            <img class="up-down-logo" src="{% static 'images/ups.jpg' %}" alt="Meta Logo">
+        </div>
+    </div>
+
+    <div class='main'>
+        <div class='main1'>
+        {% load static %}
+        <img class="lock-logo" src="{% static 'images/lock-png.png' %}" alt="Meta Logo">
+        </div>
+        
+        <div class='main2'>
+            <button id='btn2'>Unlock to view Signal</button>
+        </div>
+        
+        <div class='main3'>
+            <p id='key'>Risk : Medium</p>
+        </div>
+
+        <div class='main4'>
+             <button id='btn3'>Gain : 3.00%</button>
+        </div>
+
+        <div class='main5'>
+            <p>Finance</p>
+            <p>Investment</p>
+            <p>Bankeres/Brokers/Service</p>
+        </div>
+
+        <div class='main6'>
+            {% load static %}
+            <img class="up-down-logo" src="{% static 'images/ups.jpg' %}" alt="Meta Logo">
+        </div>
+    </div>
+
+    <div class='main'>
+        <div class='main1'>
+        {% load static %}
+        <img class="lock-logo" src="{% static 'images/lock-png.png' %}" alt="Meta Logo">
+        </div>
+        
+        <div class='main2'>
+            <button id='btn2'>Unlock to view Signal</button>
+        </div>
+        
+        <div class='main3'>
+            <p id='key'>Risk : Medium</p>
+        </div>
+
+        <div class='main4'>
+             <button id='btn3'>Gain : 3.00%</button>
+        </div>
+
+        <div class='main5'>
+            <p>Finance</p>
+            <p>Investment</p>
+            <p>Bankeres/Brokers/Service</p>
+        </div>
+
+        <div class='main6'>
+            {% load static %}
+            <img class="up-down-logo" src="{% static 'images/ups.jpg' %}" alt="Meta Logo">
+        </div>
+    </div>
+</body>
+</html>

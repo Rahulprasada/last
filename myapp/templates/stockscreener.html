@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Filter</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/stokscreen.css' %}">
+</head>
+<body>
+    <header class="header">
+        <p id="p1">📈 Mint Street</p>
+    </header>
+
+    <div class="main1">
+        <p id="p2">Select the criteria and then the app returns the list of stocks matching the criteria</p>
+    </div>
+
+    <div class="main2">
+        <label for="select-options">Stock Exchange</label>
+        <select id="stock-exchange">
+            <option value="">--Select--</option>
+            <option value="NASDQ">NASDQ</option>
+            <option value="NYSE">NYSE</option>
+        </select>
+    </div>
+
+    <div class="main3">
+        <label for="select-options">Sector</label>
+        <select id="sector">
+            <option value="">--Select--</option>
+            <option value="CO">CO</option>
+            <option value="Consumer/Non-Cyclical">Consumer/Non-Cyclical</option>
+            <option value="HealthCare">HealthCare</option>
+            <option value="Transportation">Transportation</option>
+            <option value="Conglomerates">Conglomerates</option>
+            <option value="Energy">Energy</option>
+            <option value="Utilities">Utilities</option>
+            <option value="Technology">Technology</option>
+        </select>
+    </div>
+
+    <div class="main4">
+        <label for="select-options">Price Range</label>
+        <select id="price-range">
+            <option value="">--Select--</option>
+            <option value="0-49">$0.00-$49.99</option>
+            <option value="50-99">$50.00-$99.99</option>
+            <option value="100-199">$100.00-$199.99</option>
+            <option value="200-499">$200.00-$499.99</option>
+            <option value="500-999">$500.00-$999.99</option>
+            <option value="1000-">$1000.00 and Above</option>
+        </select>
+    </div>
+
+    <div class="main5">
+        <label for="stock-ticker">Enter Stock Ticker:</label>
+        <input type="text" id="stock-ticker" placeholder="e.g. AAPL, GOOGL">
+    </div>
+
+    <button onclick="fetchFilteredData()">Submit</button>
+
+    <table id="stocks-table" border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Exchange</th>
+                <th>Sector</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <div id="pagination">
+        <button id="prev-btn" onclick="changePage(-1)">Previous</button>
+        <span id="page-num">Page 1</span>
+        <button id="next-btn" onclick="changePage(1)">Next</button>
+    </div>
+
+<script>
+    let currentPage = 1;
+    const rowsPerPage = 10; // Number of rows to display per page
+    let allStocks = [];
+
+    function fetchFilteredData() {
+        const stockExchange = document.getElementById('stock-exchange').value;
+        const sector = document.getElementById('sector').value;
+        const priceRange = document.getElementById('price-range').value;
+        const tickerSymbol = document.getElementById('stock-ticker').value.trim().toUpperCase(); // Get stock ticker from input
+
+        if (!tickerSymbol) {
+            alert("Please enter a valid stock ticker symbol.");
+            return;
+        }
+
+        // API URL with your API key
+        const apiKey = "bc1SXQFdHuNkiU79vEEnPfktcSSxXGph";
+        const baseUrl = "https://financialmodelingprep.com/api/v3/historical-price-full/";
+        const apiUrl = `${baseUrl}${tickerSymbol}?apikey=${apiKey}`;
+
+        // Fetch data from the API
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.querySelector('#stocks-table tbody');
+                tableBody.innerHTML = ''; // Clear old data
+
+                if (data.historical && data.historical.length > 0) {
+                    allStocks = data.historical.map(stock => ({
+                        name: tickerSymbol,
+                        exchange: stockExchange || "N/A",
+                        sector: sector || "N/A",
+                        price: stock.close
+                    }));
+                    renderTable();
+                } else {
+                    tableBody.innerHTML = '<tr><td colspan="4">No matching stocks found</td></tr>';
+                }
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }
+
+    function renderTable() {
+        const tableBody = document.querySelector('#stocks-table tbody');
+        tableBody.innerHTML = ''; // Clear old data
+
+        const startIndex = (currentPage - 1) * rowsPerPage;
+        const endIndex = startIndex + rowsPerPage;
+        const stocksToDisplay = allStocks.slice(startIndex, endIndex);
+
+        if (stocksToDisplay.length > 0) {
+            stocksToDisplay.forEach(stock => {
+                const row = `<tr>
+                    <td>${stock.name}</td>
+                    <td>${stock.exchange}</td>
+                    <td>${stock.sector}</td>
+                    <td>${stock.price}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        } else {
+            tableBody.innerHTML = '<tr><td colspan="4">No matching stocks found</td></tr>';
+        }
+
+        document.getElementById('page-num').innerText = `Page ${currentPage}`;
+    }
+
+    function changePage(direction) {
+        const totalPages = Math.ceil(allStocks.length / rowsPerPage);
+        currentPage = currentPage + direction;
+
+        if (currentPage < 1) {
+            currentPage = 1;
+        } else if (currentPage > totalPages) {
+            currentPage = totalPages;
+        }
+
+        renderTable();
+    }
+</script>
+</body>
+</html>

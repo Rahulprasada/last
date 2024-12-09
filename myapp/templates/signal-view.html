@@ -1,0 +1,39 @@
+<!-- stock_table.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Table</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/signalview.css' %}">
+</head>
+<body>
+    <h1 style="text-align:center;">Stocks Alerter</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Stock</th>
+                <th>bought_below</th>
+                <th>Sold Above</th>
+                <th>gain%</th>
+                <th>Signal Sent</th>
+                <th>Signal Closed</th>
+            </tr>
+        </thead>
+        <h3>Recent Successful Signals</h3>
+        <tbody>
+            {% for stock in stockes %}
+               <tr>
+                <td>{{stock.stock_name}}</td>
+                <td>{{stock.bought_below}}</td>
+                <td>{{stock.sold_above}}</td>
+                <td>{{stock.gain_percentage}}</td>
+                <td>{{stock.signal_sent}}</td>
+                <td>{{stock.signal_closed}}</td>
+               </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Alerter Signup</title>
+    <link rel="stylesheet" href="styles.css">
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'css/seeignup.css' %}">
+</head>
+<body>
+    <div class="signup-container">
+        <div class="logo">
+            <h1>📈 Mint Street</h1>
+        </div>
+        <form action="/success" method="POST" class="signup-form">
+            {% csrf_token %}
+            <h2>Create Your Account</h2>
+            <p>Join us for stock alerts!</p>
+
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Choose a username" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required>
+            </div>
+
+            <div class="input-group">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm password" required>
+            </div>
+
+            <button type="submit" class="signup-btn">Sign Up</button>
+
+            <div class="options">
+                <p>Already have an account? <a href="/login">Log In</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
