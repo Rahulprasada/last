@@ -96,6 +96,10 @@ DATABASES = {
     }
 }
 
+import pymysql # type: ignore
+pymysql.install_as_MySQLdb()
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
