@@ -1,13 +1,14 @@
 {
-  "name": "myproj",
+  "name": "street",
   "version": "1.0.0",
-  "description": "mist street",
+  "description": "Mist Street project for Algo Trading or React.js functionality",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["nodejs", "project", "mist street", "testing"],
+  "author": "Chlm",
   "license": "ISC",
   "devDependencies": {
     "jest": "^29.7.0"
