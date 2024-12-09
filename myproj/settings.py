@@ -88,13 +88,14 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')  # Default key for lo
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv('DATABASE_NAME', 'signal'),  # Default to 'signal' if not set
-        'USER': os.getenv('DATABASE_USER', 'root'),
-        'PASSWORD': os.getenv('DATABASE_PASSWORD', 'rahul123@A'),
-        'HOST': os.getenv('DATABASE_HOST', 'localhost'),
-        'PORT': os.getenv('DATABASE_PORT', '3306'),
+        'NAME': 'signal',  # Your database name
+        'USER': 'root',  # Your MySQL username
+        'PASSWORD': 'rahul123@A',  # Your MySQL password
+        'HOST': 'localhost',  # Or your database host (e.g., 'localhost' for local development)
+        'PORT': '3306',  # Default MySQL port, if different adjust accordingly
     }
 }
+
 
 import pymysql # type: ignore
 pymysql.install_as_MySQLdb()
