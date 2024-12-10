@@ -1,16 +1,10 @@
 {
-  "name": "street",
+  "name": "miststreet",
   "version": "1.0.0",
-  "description": "Mist Street project for Algo Trading or React.js functionality",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest",
-    "start": "node index.js"
-  },
-  "keywords": ["nodejs", "project", "mist street", "testing"],
+  "description": "Mist Street project using Django, HTML, CSS, and JavaScript",
+  "main": "manage.py",
+  "scripts": {},
+  "keywords": ["django", "mist street", "html", "css", "javascript"],
   "author": "Chlm",
-  "license": "ISC",
-  "devDependencies": {
-    "jest": "^29.7.0"
-  }
+  "license": "ISC"
 }

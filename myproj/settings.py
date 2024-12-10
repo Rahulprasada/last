@@ -25,11 +25,7 @@ SECRET_KEY = 'django-insecure-o6ny-(y47u&sn9tq=x-kl*45iw6j#%+mejcglabaw91ik*cr*^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    '.vercel.app', 
-    'localhost',
-    '127.0.0.1',
-]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -87,20 +83,10 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')  # Default key for lo
 # Database configuration using environment variables
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'signal',  # Your database name
-        'USER': 'root',  # Your MySQL username
-        'PASSWORD': 'rahul123@A',  # Your MySQL password
-        'HOST': 'localhost',  # Or your database host (e.g., 'localhost' for local development)
-        'PORT': '3306',  # Default MySQL port, if different adjust accordingly
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-
-import pymysql # type: ignore
-pymysql.install_as_MySQLdb()
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
