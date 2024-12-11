@@ -1,0 +1,155 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4a148c;
+    padding: 5px;
+    text-align: center;
+    color: white;
+    height: 90px;
+}
+
+#p1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.main1 {
+    text-align: center;
+    margin: 30px 0;
+    color: #555;
+}
+
+.main2, .main3, .main4 {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 500px;
+}
+
+label {
+    font-size: 1.1rem;
+    color: #444;
+    display: block;
+    margin-bottom: 8px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+select:focus {
+    border-color: #4a148c;
+    outline: none;
+}
+
+.main2, .main3, .main4 {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main2 select, .main3 select, .main4 select {
+    margin-top: 10px;
+}
+
+button {
+    display: block;
+    width: 200px;
+    padding: 12px;
+    background-color: #4a148c;
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    margin: 30px auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #7b1fa2;
+}
+
+@media (max-width: 600px) {
+    .main2, .main3, .main4 {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+/* CSS: styles.css */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: #4CAF50;
+    color: white;
+}
+
+thead th {
+    padding: 12px;
+    font-size: 16px;
+    text-align: center;
+}
+
+tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid #ddd;
+}
+
+/* Add subtle borders */
+th, td {
+    border: 1px solid #ddd;
+}
+
+/* Table container */
+table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#page-num{
+    margin-left: 650px;
+    font-size: 1.2rem;
+}
+
+.main5{
+    margin-left: 580px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}

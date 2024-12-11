@@ -22,8 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')  # Get from environment or use default for dev
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DJANGO_DEBUG', 'True') == 'True'  # Get from environment variable for production
+DEBUG = True # Get from environment variable for production
 
 # Allow only specific hosts in production (replace with your actual domains or IPs)
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '*').split(',')  # Default to '*' for dev
@@ -65,7 +64,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'myproj.wsgi.application'
+WSGI_APPLICATION = 'Miststreet.wsgi.application'
 
 # Database configuration using environment variables for production
 DATABASES = {
@@ -99,10 +98,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # Static files directory for development
-]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # For production use collectstatic
 

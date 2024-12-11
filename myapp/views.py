@@ -26,9 +26,8 @@ def stockview(request):
     return render(request,'stockscreener.html')
 
 def fetch_filtered_data(request):
-    # Replace this with your stock market API endpoint and key
-    api_url = f"https://financialmodelingprep.com/api/v3/historical-price-full/AAPL?apikey={api_key}"
     api_key = 'bc1SXQFdHuNkiU79vEEnPfktcSSxXGph'
+    api_url = f"https://financialmodelingprep.com/api/v3/historical-price-full/AAPL?apikey={api_key}"
 
     # Get user-selected filters from the request
     stock_exchange = request.GET.get('stock_exchange', '')
@@ -42,24 +41,23 @@ def fetch_filtered_data(request):
     
     data = response.json()
 
+    # Extract historical stock data
+    historical_data = data.get('historical', [])
+
     # Filter the data based on user selections
     filtered_data = []
-    for stock in data:
-        if stock_exchange and stock['exchange'] != stock_exchange:
+    for stock in historical_data:
+        if stock_exchange and 'exchange' in stock and stock['exchange'] != stock_exchange:
             continue
-        if sector and stock['sector'] != sector:
+        if sector and 'sector' in stock and stock['sector'] != sector:
             continue
         if price_range:
             min_price, max_price = map(float, price_range.replace('$', '').split('-'))
-            if not (min_price <= stock['price'] <= max_price):
+            if not (min_price <= stock['close'] <= max_price):
                 continue
         filtered_data.append(stock)
 
+    if not filtered_data:
+        return JsonResponse({'stocks': []}, status=200)
+
     return JsonResponse({'stocks': filtered_data}, status=200)
-
-
-
-
-
-
-

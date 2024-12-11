@@ -1,0 +1,76 @@
+/* Reset body margins and padding */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f7f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Overlay that covers the entire screen */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it appears above other content */
+  }
+  
+  /* Alert box styling */
+  .alert {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px 40px;
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out;
+  }
+  
+  /* Heading style */
+  .alert h1 {
+    color: #6a4caf;
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  /* Paragraph style */
+  .alert p {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+  }
+  
+  /* Success icon style */
+  .tick-icon {
+    background-color: #4caf50;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  
+  /* Smooth fade-in animation for the alert box */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
