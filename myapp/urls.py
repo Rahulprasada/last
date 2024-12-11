@@ -1,7 +1,7 @@
-from django.urls import path
+from django.urls import path # type: ignore
 from . import views
-from django.conf.urls.static import static
-from django.conf import settings
+from django.conf.urls.static import static # type: ignore
+from django.conf import settings # type: ignore
 
 urlpatterns = [
     path('', views.first, name = 'one'),

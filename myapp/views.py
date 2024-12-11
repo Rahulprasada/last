@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render # type: ignore
 from .models import StockDetails
-import requests
-from django.http import JsonResponse
+import requests # type: ignore
+from django.http import JsonResponse # type: ignore
 
 def first(request):
     return render(request , 'first.html')
