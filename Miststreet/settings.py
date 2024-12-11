@@ -114,6 +114,12 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+ROOT_URLCONF = 'Miststreet.urls'
+
+
 # Additional settings for production
 if not DEBUG:
     # For production, you should configure logging and other settings here
