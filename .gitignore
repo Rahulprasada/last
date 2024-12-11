@@ -1,3 +1,11 @@
 # Created by venv; see https://docs.python.org/3/library/venv.html
 
-*
+venv/
+
+# Ignore sensitive files
+*.env
+
+# Ignore Django migrations
+*.pyc
+__pycache__/
+db.sqlite3
