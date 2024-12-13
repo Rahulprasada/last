@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Viewer</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/upload.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery for convenience -->
+</head>
+<body>
+    <div class="heading">
+        <p>Viewing Trading Records</p>
+    </div>
+
+    <!-- Search Form -->
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search by Ticker Symbol (e.g., TCS)" onkeyup="filterRecords()">
+    </div>
+
+    <table id="recordsTable">
+        <thead>
+            <tr>
+                <th>TradDt</th>
+                <th>Sgmt</th>
+                <th>FinInstrmId</th>
+                <th>ISIN</th>
+                <th>TckrSymb</th>
+                <th>SctySrs</th>
+                <th>FinInstrmNm</th>
+                <th>OpnPric</th>
+                <th>HghPric</th>
+                <th>LwPric</th>
+                <th>ClsPric</th>
+                <th>LastPric</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr class="record">
+                <td>{{ record.TradDt}}</td>
+                <td>{{ record.Sgmt}}</td>
+                <td>{{ record.FinInstrmId }}</td>
+                <td>{{ record.ISIN }}</td>
+                <td>{{ record.TckrSymb }}</td>
+                <td>{{ record.SctySrs }}</td>
+                <td>{{ record.FinInstrmNm }}</td>
+                <td>{{ record.OpnPric }}</td>
+                <td>{{ record.HghPric }}</td>
+                <td>{{ record.LwPric }}</td>
+                <td>{{ record.ClsPric }}</td>
+                <td>{{ record.LastPric }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        // Function to filter records based on the search input
+        function filterRecords() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            console.log("Search filter: " + filter); // Debugging line
+            table = document.getElementById("recordsTable");
+            tr = table.getElementsByTagName("tr");
+        
+            for (i = 1; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[4]; // Column for TckrSymb (Ticker Symbol)
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    console.log("Row TckrSymb: " + txtValue); // Debugging line
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+        
+    </script>
+
+</body>
+</html>

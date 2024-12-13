@@ -69,8 +69,12 @@ WSGI_APPLICATION = 'Miststreet.wsgi.application'
 # Database configuration using environment variables for production
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',  # Change to PostgreSQL or MySQL in production
-        'NAME': BASE_DIR / 'db.sqlite3',  # Path for SQLite, replace with your DB settings for prod
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'signal',  # Your database name
+        'USER': 'root',  # Your MySQL username
+        'PASSWORD': 'rahul123@A',  # Your MySQL password
+        'HOST': 'localhost',  # Or your database host (e.g., 'localhost' for local development)
+        'PORT': '3306',  # Default MySQL port, if different adjust accordingly
     }
 }
 

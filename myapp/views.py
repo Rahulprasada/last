@@ -2,6 +2,12 @@ from django.shortcuts import render # type: ignore
 from .models import StockDetails
 import requests # type: ignore
 from django.http import JsonResponse # type: ignore
+import pandas as pd  # type: ignore
+from .models import StockRecord
+from datetime import datetime
+import csv
+from django.conf import settings
+import os
 
 def first(request):
     return render(request , 'first.html')
@@ -61,3 +67,10 @@ def fetch_filtered_data(request):
         return JsonResponse({'stocks': []}, status=200)
 
     return JsonResponse({'stocks': filtered_data}, status=200)
+
+
+
+def stock_view(request):
+    records = StockRecord.objects.all()  # or use any filtering you need
+    return render(request, 'upload_excel.html', {'records': records})
+

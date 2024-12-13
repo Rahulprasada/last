@@ -12,4 +12,5 @@ urlpatterns = [
     path('signalview/', views.sigview, name='signalview'),
     path('stockview/', views.stockview, name="stockview"),
     path('fetch_filtered_data/', views.fetch_filtered_data, name='fetch_filtered_data'),
+    path('excelfile/',views.stock_view,name='excelfile'),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
